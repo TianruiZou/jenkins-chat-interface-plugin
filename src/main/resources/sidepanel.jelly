@@ -1,0 +1,55 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:st="jelly:stapler">
+    <div class="sidepanel">
+        <h2>Chat Interface</h2>
+        <p>Welcome to the Jenkins Chat Interface Plugin</p>
+        <p>Here you can:</p>
+        <ul>
+            <li>Send messages</li>
+            <li>View system responses</li>
+            <li>View system responses</li>
+        </ul>
+    </div>
+    
+    <style>
+        .sidepanel {
+            width: 250px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+        
+        .sidepanel h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .sidepanel p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .sidepanel ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .sidepanel li {
+            color: #666;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .sidepanel li:before {
+            content: "•";
+            color: #1a73e8;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</j:jelly> 

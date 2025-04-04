@@ -1,0 +1,93 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:st="jelly:stapler">
+    <st:header name="Content-Type" value="text/html;charset=UTF-8"/>
+    <st:include page="sidepanel.jelly" it="${it}"/>
+    
+    <div class="chat-container">
+        <h1>Chat Interface</h1>
+        
+        <st:form action="respond" method="post" name="chatForm">
+            <div class="input-area">
+                <input type="text" id="userInput" name="message" placeholder="please type your message...." class="text-input" required="true"/>
+                <button type="submit" class="submit-button" onclick="return validateForm()">发送</button>
+            </div>
+        </st:form>
+        
+        <div id="responseArea" class="response-area">
+            <j:if test="${it.lastResponse != null}">
+                <div class="response-message">
+                    ${it.lastResponse}
+                </div>
+            </j:if>
+        </div>
+    </div>
+    
+    <script>
+        function validateForm() {
+            var input = document.getElementById('userInput');
+            if (input.value.trim() === '') {
+                alert('请输入消息内容');
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+    <style>
+        .chat-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .text-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .submit-button:hover {
+            background-color: #1557b0;
+        }
+        
+        .response-area {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            min-height: 100px;
+            border: 1px solid #ddd;
+        }
+        
+        .response-message {
+            color: #333;
+            line-height: 1.5;
+        }
+    </style>
+</j:jelly> 
