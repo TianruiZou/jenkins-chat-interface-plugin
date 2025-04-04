@@ -1,44 +1,22 @@
-Chat Interface Plugin
-This is a Jenkins plugin developed as a sample project for Google Summer of Code (GSoC) 2025, specifically for the "AI-Powered Chatbot for Jenkins Documentation and Community Resources" project idea.
+# Jenkins Chat Interface Plugin
 
-Features
-Simple interactive chat interface
+An experimental Jenkins plugin that introduces a basic chat-style frontend interface, serving as a prototype for the AI-powered chatbot project for Google Summer of Code 2025.
 
-Access control based on Jenkins' built-in permission system
+## Features
 
-Responsive design suitable for various screen sizes
+- Jelly-based frontend UI
+- Input field and message display
+- Placeholder for backend message processing
 
-Development Requirements
-Java 11
+## Future Plans
 
-Maven 3.6+
+- Integrate with FastAPI backend
+- Implement NLP response processing via spaCy
+- Retrieve Jenkins documentation and plugin metadata dynamically
 
-Jenkins 2.440.1
+## Setup
 
-Build Instructions
-Clone the repository
+Clone the repo and run:
 
-Run:
-
-bash
-Copy
-Edit
-mvn clean package
-The resulting .hpi file will be located at:
-target/chat-interface-plugin.hpi
-
-Installation Guide
-Go to Manage Jenkins > Manage Plugins
-
-Click on the Advanced tab
-
-Under the Upload Plugin section, upload the generated .hpi file
-
-Restart Jenkins to apply changes
-
-How to Use
-Once installed, you will find a "Chat Interface" option in the Jenkins main sidebar.
-Click it to open a basic interactive chat screen integrated into the Jenkins UI.
-
-License
-MIT License
+```bash
+mvn hpi:run
